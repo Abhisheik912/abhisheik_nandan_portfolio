@@ -4,8 +4,8 @@
 const GITHUB_USERNAME = 'Abhisheik912';
 // Once your backend is live on Render, replace this URL:
 const BACKEND_URL = 'https://YOUR-BACKEND.onrender.com/contact';
-// Path to your learning log JSON in the same repo:
-const LEARNING_LOG_URL = 'learning-log.json';
+// Path to your learning log JSON - uses current base path automatically:
+const LEARNING_LOG_URL = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/learning-log.json';
 
 // ── NAVBAR HAMBURGER ── //
 const hamburger = document.getElementById('hamburger');
@@ -69,7 +69,8 @@ async function loadProjects() {
   const grid = document.getElementById('projectsGrid');
   try {
     const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`,
+      { headers: { 'Accept': 'application/vnd.github.v3+json' } }
     );
     if (!res.ok) throw new Error('GitHub API error');
     const repos = await res.json();
