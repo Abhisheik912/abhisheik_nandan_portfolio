@@ -7,20 +7,28 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
+  <!-- STATUS BAR -->
+  <div class="status-bar" id="statusBar">
+    <div class="status-bar-inner">
+      <span class="status-dot"></span>
+      <span class="status-text" id="statusText">Loading current status...</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-inner">
-      <span class="nav-logo"><span class="accent">~/</span>abhisheik</span>
+      <span class="nav-logo">Abhisheik<span class="accent">.</span></span>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#github">GitHub</a></li>
+        <li><a href="#learning">Learning</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -32,363 +40,224 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#github">GitHub</a>
+      <a href="#learning">Learning</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        <span>Available for opportunities</span>
+      <div class="hero-left">
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-line"></span>
+          Senior Technical Support → DevOps Engineer
+        </div>
+        <h1 class="hero-name reveal">
+          Abhisheik<br /><em>Nandan N</em>
+        </h1>
+        <p class="hero-tagline reveal">
+          Infrastructure-minded engineer with hands-on experience in Linux hosting, DNS architecture, and server operations at Namecheap — now building the automation layer on top.
+        </p>
+        <div class="hero-btns reveal">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Years in Hosting Infra</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Projects on GitHub</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Cert in Progress</span>
+          </div>
+        </div>
       </div>
-      <h1 class="hero-name">Abhisheik<br /><span class="accent">Nandan N</span></h1>
-      <div class="hero-title">
-        <span class="terminal-prompt">$ </span><span id="typed-title"></span><span class="cursor-blink">▋</span>
-      </div>
-      <p class="hero-tagline">Automating deployments, troubleshooting systems, and ensuring high availability across modern infrastructure.</p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="https://github.com/Abhisheik912" target="_blank" class="btn btn-ghost">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="#contact" class="btn btn-ghost">Contact</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Exp</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Companies</span></div>
-      </div>
-    </div>
-    <div class="hero-terminal">
-      <div class="terminal-bar">
-        <span class="t-dot red"></span>
-        <span class="t-dot yellow"></span>
-        <span class="t-dot green"></span>
-        <span class="t-title">system@namecheap:~</span>
-      </div>
-      <div class="terminal-body">
-        <p><span class="t-prompt">$</span> <span class="t-cmd">uptime</span></p>
-        <p class="t-out">up 847 days, load avg: 0.12, 0.08, 0.05</p>
-        <p><span class="t-prompt">$</span> <span class="t-cmd">systemctl status nginx</span></p>
-        <p class="t-out t-green">● nginx.service - A high performance web server</p>
-        <p class="t-out t-green">&nbsp;&nbsp;&nbsp;Active: active (running)</p>
-        <p><span class="t-prompt">$</span> <span class="t-cmd">docker ps --format "table {{.Names}}\t{{.Status}}"</span></p>
-        <p class="t-out">NAMES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS</p>
-        <p class="t-out t-cyan">app-container&nbsp;&nbsp;Up 3 hours</p>
-        <p class="t-out t-cyan">db-postgres&nbsp;&nbsp;&nbsp;&nbsp;Up 3 hours</p>
-        <p><span class="t-prompt">$</span> <span class="t-cmd">git log --oneline -3</span></p>
-        <p class="t-out">a3f1c9d feat: add CI/CD pipeline</p>
-        <p class="t-out">b2e0d8c fix: DNS propagation issue</p>
-        <p class="t-out">c1d7f3a chore: update nginx config</p>
-        <p class="t-blink"><span class="t-prompt">$</span> <span class="cursor-blink">▋</span></p>
+      <div class="hero-right reveal">
+        <div class="photo-frame">
+          <img src="assets/profile.jpeg" alt="Abhisheik Nandan N" class="profile-photo" />
+          <div class="photo-badge">
+            <span class="badge-dot"></span>
+            Available for opportunities
+          </div>
+        </div>
       </div>
     </div>
     <div class="scroll-hint">
-      <span>scroll</span>
       <div class="scroll-line"></div>
+      <span>scroll</span>
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">01.</span> About</div>
+      <div class="section-label reveal"><span class="label-num">01</span>About</div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <h2 class="section-title">Building Reliable<br /><span class="accent">Infrastructure</span></h2>
-          <p>DevOps Engineer with hands-on experience in Linux-based hosting environments, system troubleshooting, and infrastructure support. Currently working at <strong>Namecheap</strong> as a Senior Technical Support Specialist, handling advanced technical issues across DNS, server configurations, and web hosting systems.</p>
-          <p>Skilled in automating workflows, managing deployments, and resolving real-world production issues with a relentless focus on reliability and performance. My background bridges operational support and engineering — I don't just fix problems, I build systems that prevent them.</p>
-          <div class="about-chips">
-            <span class="chip">Linux Administration</span>
-            <span class="chip">DNS Architecture</span>
-            <span class="chip">CI/CD Pipelines</span>
-            <span class="chip">Docker Containers</span>
-            <span class="chip">AWS EC2</span>
-            <span class="chip">Shell Scripting</span>
-          </div>
+          <h2 class="section-title">The story so<br /><em>far</em></h2>
+          <p>I'm a Senior Technical Support Specialist at <strong>Namecheap</strong> — one of the world's largest web hosting and domain registrars. Every day I troubleshoot Linux-based servers, resolve DNS failures, debug email protocols, and keep production environments running for thousands of customers.</p>
+          <p>That operational depth — knowing what breaks, why it breaks, and how to fix it fast — is exactly what makes a great DevOps engineer. Now I'm formalising that with a structured DevOps certification and building real projects that demonstrate the full pipeline: code, containerise, automate, deploy, monitor.</p>
+          <p>I'm not starting from scratch. I'm building upward.</p>
         </div>
-        <div class="about-card-stack reveal reveal-delay">
-          <div class="about-card glass">
-            <div class="about-card-icon">⚡</div>
-            <h4>Automation First</h4>
-            <p>Eliminate manual toil through intelligent scripting and workflow automation.</p>
+        <div class="about-cards reveal">
+          <div class="about-card">
+            <div class="card-icon">⚡</div>
+            <h4>Infrastructure Background</h4>
+            <p>2+ years supporting Linux hosting, DNS, VPS, and dedicated servers in a live production environment.</p>
           </div>
-          <div class="about-card glass">
-            <div class="about-card-icon">🛡️</div>
-            <h4>High Availability</h4>
-            <p>Design and maintain systems that stay up — root cause analysis for every incident.</p>
+          <div class="about-card">
+            <div class="card-icon">🔁</div>
+            <h4>Automation Focused</h4>
+            <p>Learning CI/CD, Docker, and cloud platforms to automate everything that can be automated.</p>
           </div>
-          <div class="about-card glass">
-            <div class="about-card-icon">🔍</div>
-            <h4>Deep Troubleshooting</h4>
-            <p>Escalated issue resolution across DNS, hosting, servers, and email infrastructure.</p>
+          <div class="about-card">
+            <div class="card-icon">📈</div>
+            <h4>Actively Certifying</h4>
+            <p>Currently completing the Error Makes Clever DevOps Bootcamp — ISO certification on the way.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SKILLS ── -->
-  <section id="skills" class="section section-alt">
+  <!-- SKILLS -->
+  <section id="skills" class="section section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">02.</span> Skills</div>
-      <h2 class="section-title reveal">Technical <span class="accent">Arsenal</span></h2>
-      <div class="skills-grid">
+      <div class="section-label reveal"><span class="label-num">02</span>Skills</div>
+      <h2 class="section-title reveal">Technical<br /><em>foundation</em></h2>
+      <div class="skills-grid reveal">
 
-        <div class="skill-card glass reveal">
-          <div class="skill-card-header">
-            <span class="skill-icon">🔄</span>
-            <span class="skill-cat">CI/CD</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>GitHub Actions</li>
-            <li><span class="skill-dot"></span>Jenkins</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:72%"></div>
+        <div class="skill-group">
+          <div class="skill-group-title">Systems & Hosting</div>
+          <div class="skill-items">
+            <div class="skill-item active">Linux Administration</div>
+            <div class="skill-item active">DNS (A, CNAME, MX, TXT, NS)</div>
+            <div class="skill-item active">cPanel / WHM</div>
+            <div class="skill-item active">SMTP / IMAP / POP3</div>
+            <div class="skill-item active">VPS & Dedicated Servers</div>
           </div>
         </div>
 
-        <div class="skill-card glass reveal reveal-delay">
-          <div class="skill-card-header">
-            <span class="skill-icon">🐳</span>
-            <span class="skill-cat">Containers</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>Docker</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:65%"></div>
+        <div class="skill-group">
+          <div class="skill-group-title">DevOps & Automation</div>
+          <div class="skill-items">
+            <div class="skill-item active">Git & GitHub</div>
+            <div class="skill-item active">GitHub Actions</div>
+            <div class="skill-item learning">Docker</div>
+            <div class="skill-item learning">CI/CD Pipelines</div>
+            <div class="skill-item learning">Bash Scripting</div>
           </div>
         </div>
 
-        <div class="skill-card glass reveal">
-          <div class="skill-card-header">
-            <span class="skill-icon">🌿</span>
-            <span class="skill-cat">Version Control</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>Git</li>
-            <li><span class="skill-dot"></span>GitHub</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:85%"></div>
+        <div class="skill-group">
+          <div class="skill-group-title">Cloud & Infrastructure</div>
+          <div class="skill-items">
+            <div class="skill-item learning">AWS EC2</div>
+            <div class="skill-item learning">Cloud Fundamentals</div>
+            <div class="skill-item upcoming">Kubernetes</div>
+            <div class="skill-item upcoming">Terraform</div>
+            <div class="skill-item upcoming">Monitoring & Observability</div>
           </div>
         </div>
 
-        <div class="skill-card glass reveal reveal-delay">
-          <div class="skill-card-header">
-            <span class="skill-icon">📜</span>
-            <span class="skill-cat">Scripting</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>Bash</li>
-            <li><span class="skill-dot"></span>Python</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:70%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card glass reveal">
-          <div class="skill-card-header">
-            <span class="skill-icon">☁️</span>
-            <span class="skill-cat">Cloud</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>AWS EC2</li>
-            <li><span class="skill-dot"></span>Cloud Fundamentals</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:55%"></div>
-          </div>
-        </div>
-
-        <div class="skill-card glass reveal reveal-delay">
-          <div class="skill-card-header">
-            <span class="skill-icon">🖥️</span>
-            <span class="skill-cat">Systems & Hosting</span>
-          </div>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>Linux (Intermediate)</li>
-            <li><span class="skill-dot"></span>cPanel</li>
-            <li><span class="skill-dot"></span>DNS (A, CNAME, MX, TXT, NS)</li>
-          </ul>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" style="--w:88%"></div>
+        <div class="skill-group">
+          <div class="skill-group-title">Languages</div>
+          <div class="skill-items">
+            <div class="skill-item active">Python</div>
+            <div class="skill-item active">HTML / CSS / JS</div>
+            <div class="skill-item learning">Bash</div>
+            <div class="skill-item learning">YAML</div>
           </div>
         </div>
 
       </div>
+      <div class="skills-legend reveal">
+        <span class="legend-item"><span class="legend-dot active"></span>Proficient</span>
+        <span class="legend-item"><span class="legend-dot learning"></span>Currently Learning</span>
+        <span class="legend-item"><span class="legend-dot upcoming"></span>Up Next</span>
+      </div>
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
+  <!-- PROJECTS -->
   <section id="projects" class="section">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">03.</span> Projects</div>
-      <h2 class="section-title reveal">Selected <span class="accent">Work</span></h2>
-      <div class="projects-grid">
-
-        <div class="project-card glass reveal">
-          <div class="project-card-top">
-            <div class="project-number">01</div>
-            <div class="project-links">
-              <a href="https://github.com/Abhisheik912" target="_blank" title="View on GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">LifeAt23</h3>
-          <p class="project-subtitle">Static Website Deployment</p>
-          <p class="project-desc">Built and structured a static website with clean deployment workflow fundamentals. Managed full version control lifecycle using Git — from initial commit to production-ready state.</p>
-          <div class="project-tags">
-            <span class="tag">Git</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">Static Deploy</span>
-          </div>
+      <div class="section-label reveal"><span class="label-num">03</span>Projects</div>
+      <div class="projects-header reveal">
+        <h2 class="section-title">Work in<br /><em>public</em></h2>
+        <p class="projects-subtext">Pulled live from GitHub. Updates automatically when I push new repos.</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="projects-loading">
+          <div class="loading-spinner"></div>
+          <span>Fetching from GitHub...</span>
         </div>
-
-        <div class="project-card glass reveal reveal-delay">
-          <div class="project-card-top">
-            <div class="project-number">02</div>
-            <div class="project-links">
-              <a href="https://github.com/Abhisheik912" target="_blank" title="View on GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Collaborative Static Site</h3>
-          <p class="project-subtitle">Git Workflow & Team Collaboration</p>
-          <p class="project-desc">Implemented a full Git branching strategy with feature branches, pull requests, and conflict resolution. Demonstrates real-world team collaboration patterns used in production engineering teams.</p>
-          <div class="project-tags">
-            <span class="tag">Git</span>
-            <span class="tag">Branching</span>
-            <span class="tag">PR Review</span>
-          </div>
-        </div>
-
-        <div class="project-card glass reveal">
-          <div class="project-card-top">
-            <div class="project-number">03</div>
-            <div class="project-links">
-              <a href="https://github.com/Abhisheik912" target="_blank" title="View on GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Language Learning Chatbot</h3>
-          <p class="project-subtitle">Python Backend + Containerization</p>
-          <p class="project-desc">Built with Python backend logic handling conversational user interactions. Architected to be extensible into a fully containerized microservice — a natural candidate for Docker deployment and CI pipeline integration.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Docker-Ready</span>
-            <span class="tag">Backend</span>
-          </div>
-        </div>
-
-        <div class="project-card glass reveal reveal-delay project-card-wide">
-          <div class="project-card-top">
-            <div class="project-number">04</div>
-            <div class="project-links">
-              <a href="https://github.com/Abhisheik912" target="_blank" title="View on GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Data Projects Collection</h3>
-          <p class="project-subtitle">Analytics, Prediction & Log-Pattern Thinking</p>
-          <p class="project-desc">A suite of analytical projects demonstrating data wrangling, pattern recognition, and scripting discipline — skills that translate directly into log analysis, monitoring, and anomaly detection in DevOps contexts.</p>
-          <div class="project-sub-items">
-            <div class="sub-item">📉 Customer Churn Analysis</div>
-            <div class="sub-item">🚗 Uber & Zomato Data Analysis</div>
-            <div class="sub-item">💳 Loan Default Prediction</div>
-          </div>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">ML Basics</span>
-          </div>
-        </div>
-
+      </div>
+      <div class="projects-footer reveal">
+        <a href="https://github.com/Abhisheik912" target="_blank" class="btn btn-outline">
+          View all on GitHub →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── EXPERIENCE ── -->
-  <section id="experience" class="section section-alt">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">04.</span> Experience</div>
-      <h2 class="section-title reveal">Career <span class="accent">Timeline</span></h2>
+      <div class="section-label reveal"><span class="label-num">04</span>Experience</div>
+      <h2 class="section-title reveal">Career<br /><em>timeline</em></h2>
       <div class="timeline">
 
         <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-line"></div>
-          <div class="timeline-card glass">
-            <div class="timeline-header">
-              <div>
-                <h3>Senior Technical Support Specialist</h3>
-                <div class="timeline-company">
-                  <span class="company-badge">Namecheap</span>
-                </div>
-              </div>
-              <div class="timeline-date">Feb 2026 – Present</div>
-            </div>
-            <ul class="timeline-bullets">
-              <li>Troubleshoot Linux-based hosting environments across Shared, VPS, and Dedicated server tiers</li>
-              <li>Resolve complex DNS issues including propagation failures and record misconfiguration</li>
-              <li>Handle server performance degradation and website availability incidents end-to-end</li>
-              <li>Perform root cause analysis for escalated technical issues across the support hierarchy</li>
-            </ul>
+          <div class="timeline-meta">
+            <span class="timeline-date">Feb 2026 – Present</span>
+            <span class="timeline-company">Namecheap</span>
           </div>
-        </div>
-
-        <div class="timeline-item reveal reveal-delay">
-          <div class="timeline-dot"></div>
-          <div class="timeline-line"></div>
-          <div class="timeline-card glass">
-            <div class="timeline-header">
-              <div>
-                <h3>Customer Support Representative</h3>
-                <div class="timeline-company">
-                  <span class="company-badge">Namecheap</span>
-                </div>
-              </div>
-              <div class="timeline-date">Aug 2025 – Feb 2026</div>
-            </div>
-            <ul class="timeline-bullets">
-              <li>Resolved hosting, email, and domain issues for a large-scale client base</li>
-              <li>Assisted with migrations, server configurations, and environment setups</li>
-              <li>Supported clients on email protocols: SMTP, IMAP, POP3</li>
+          <div class="timeline-card">
+            <h3>Senior Technical Support Specialist</h3>
+            <ul>
+              <li>Troubleshoot Linux-based hosting across Shared, VPS, and Dedicated server tiers</li>
+              <li>Resolve complex DNS propagation failures and record misconfigurations</li>
+              <li>Handle server performance degradation and website availability incidents end-to-end</li>
+              <li>Perform root cause analysis for escalated technical issues</li>
             </ul>
           </div>
         </div>
 
         <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <div class="timeline-header">
-              <div>
-                <h3>Chief Operating Officer</h3>
-                <div class="timeline-company">
-                  <span class="company-badge company-badge-alt">Annabhojanam</span>
-                </div>
-              </div>
-              <div class="timeline-date">Apr 2024 – Jan 2025</div>
-            </div>
-            <ul class="timeline-bullets">
-              <li>Managed end-to-end operations and execution strategy across the organization</li>
+          <div class="timeline-meta">
+            <span class="timeline-date">Aug 2025 – Feb 2026</span>
+            <span class="timeline-company">Namecheap</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Customer Support Representative</h3>
+            <ul>
+              <li>Resolved hosting, email, and domain issues for a large-scale client base</li>
+              <li>Assisted with server migrations, configurations, and environment setups</li>
+              <li>Supported clients across email protocols: SMTP, IMAP, POP3</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Apr 2024 – Jan 2025</span>
+            <span class="timeline-company">Annabhojanam</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Chief Operating Officer</h3>
+            <ul>
+              <li>Managed end-to-end operations and execution strategy</li>
               <li>Improved operational efficiency through workflow process redesign</li>
             </ul>
           </div>
@@ -398,85 +267,82 @@
     </div>
   </section>
 
-  <!-- ── GITHUB ── -->
-  <section id="github" class="section">
+  <!-- LEARNING LOG -->
+  <section id="learning" class="section">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">05.</span> GitHub</div>
-      <div class="github-section reveal">
-        <div class="github-text">
-          <h2 class="section-title">Code in <span class="accent">Public</span></h2>
-          <p>Explore repositories, follow my DevOps journey, and see work-in-progress projects. From infrastructure scripts to deployment pipelines — it's all out in the open.</p>
-          <a href="https://github.com/Abhisheik912" target="_blank" class="btn btn-primary github-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            github.com/Abhisheik912
-          </a>
-        </div>
-        <div class="github-card glass">
-          <div class="gh-header">
-            <div class="gh-avatar">AN</div>
-            <div>
-              <div class="gh-name">Abhisheik Nandan N</div>
-              <div class="gh-handle">@Abhisheik912</div>
-            </div>
-          </div>
-          <div class="gh-contrib">
-            <div class="contrib-label">Contribution Activity</div>
-            <div class="contrib-grid" id="contribGrid"></div>
-          </div>
-          <div class="gh-stats">
-            <div class="gh-stat"><span>4+</span><small>Repos</small></div>
-            <div class="gh-stat"><span>🟢</span><small>Active</small></div>
-            <div class="gh-stat"><span>Git</span><small>Primary</small></div>
-          </div>
+      <div class="section-label reveal"><span class="label-num">05</span>Learning Log</div>
+      <div class="learning-header reveal">
+        <h2 class="section-title">The journey,<br /><em>documented</em></h2>
+        <p class="learning-subtext">Updated weekly as I progress through the DevOps bootcamp. Every entry is a real commit.</p>
+      </div>
+      <div class="learning-grid" id="learningGrid">
+        <div class="projects-loading">
+          <div class="loading-spinner"></div>
+          <span>Loading learning log...</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
-  <section id="contact" class="section section-alt">
+  <!-- CONTACT -->
+  <section id="contact" class="section section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="accent">06.</span> Contact</div>
-      <div class="contact-inner">
-        <div class="contact-text reveal">
-          <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
-          <p>Open to DevOps Engineer roles, infrastructure opportunities, and interesting challenges. Reach out and let's talk.</p>
+      <div class="section-label reveal"><span class="label-num">06</span>Contact</div>
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <h2 class="section-title">Let's<br /><em>talk</em></h2>
+          <p>Open to DevOps Engineer roles and infrastructure opportunities. If you're hiring or just want to connect, I'd love to hear from you.</p>
+          <div class="contact-links">
+            <a href="mailto:abhisheik912@gmail.com" class="contact-link">
+              <span class="contact-link-icon">✉</span>
+              abhisheik912@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/abhisheik-nandan-1a476a350" target="_blank" class="contact-link">
+              <span class="contact-link-icon">in</span>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Abhisheik912" target="_blank" class="contact-link">
+              <span class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              github.com/Abhisheik912
+            </a>
+          </div>
         </div>
-        <div class="contact-links reveal reveal-delay">
-          <a href="mailto:abhisheik912@gmail.com" class="contact-item glass">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <div class="contact-label">Email</div>
-              <div class="contact-value">abhisheik912@gmail.com</div>
+        <div class="contact-right reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
             </div>
-          </a>
-          <a href="https://www.linkedin.com/in/abhisheik-nandan-1a476a350" target="_blank" class="contact-item glass">
-            <div class="contact-icon">💼</div>
-            <div>
-              <div class="contact-label">LinkedIn</div>
-              <div class="contact-value">abhisheik-nandan-1a476a350</div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
             </div>
-          </a>
-          <a href="https://github.com/Abhisheik912" target="_blank" class="contact-item glass">
-            <div class="contact-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="DevOps Engineer Role at..." />
             </div>
-            <div>
-              <div class="contact-label">GitHub</div>
-              <div class="contact-value">github.com/Abhisheik912</div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
             </div>
-          </a>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              Send Message
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-logo"><span class="accent">~/</span>abhisheik-nandan</span>
-      <span class="footer-copy">© 2025 Abhisheik Nandan N — DevOps Engineer</span>
-      <span class="footer-built">Built with <span class="accent">♥</span> & clean code</span>
+      <span class="footer-logo">Abhisheik<span class="accent">.</span></span>
+      <span class="footer-copy">© 2025 Abhisheik Nandan N</span>
+      <span class="footer-built">Built & deployed with Git + GitHub Actions</span>
     </div>
   </footer>
 

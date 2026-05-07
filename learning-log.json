@@ -1,0 +1,40 @@
+{
+  "currentStatus": "Week 3 of DevOps Bootcamp — currently learning Docker & Containerization",
+  "entries": [
+    {
+      "week": "Week 1",
+      "title": "Linux & Git Foundations",
+      "description": "Covered Linux CLI basics, file permissions, process management, and full Git workflow from init to push. Built confidence working entirely in the terminal.",
+      "tags": ["Linux", "Git", "CLI", "Terminal"],
+      "status": "done"
+    },
+    {
+      "week": "Week 2",
+      "title": "GitHub & Static Deployment",
+      "description": "Built and deployed static sites using GitHub Pages. Practiced branching strategies, pull requests, and resolving merge conflicts.",
+      "tags": ["GitHub", "GitHub Pages", "Branching", "PR"],
+      "status": "done"
+    },
+    {
+      "week": "Week 3",
+      "title": "Docker & Containerization",
+      "description": "Currently learning Docker fundamentals — images, containers, Dockerfiles, volumes, and docker-compose for multi-container setups.",
+      "tags": ["Docker", "Containers", "Dockerfile"],
+      "status": "in-progress"
+    },
+    {
+      "week": "Week 4",
+      "title": "CI/CD with GitHub Actions",
+      "description": "Will cover writing workflow YAML files, automated testing pipelines, and auto-deployment on push.",
+      "tags": ["GitHub Actions", "CI/CD", "YAML"],
+      "status": "upcoming"
+    },
+    {
+      "week": "Week 5",
+      "title": "AWS Cloud Fundamentals",
+      "description": "EC2 instances, S3 storage, IAM roles, VPC networking, and deploying a real application to the cloud.",
+      "tags": ["AWS", "EC2", "S3", "IAM"],
+      "status": "upcoming"
+    }
+  ]
+}

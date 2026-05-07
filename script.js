@@ -1,73 +1,43 @@
-/* ── TYPED TITLE EFFECT ── */
-const titles = [
-  'DevOps Engineer',
-  'Infrastructure Specialist',
-  'Linux Administrator',
-  'Automation Engineer',
-  'DNS & Hosting Expert'
-];
+/* ── script.js ── */
 
-let titleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typedEl = document.getElementById('typed-title');
+// ── CONFIG ── //
+const GITHUB_USERNAME = 'Abhisheik912';
+// Once your backend is live on Render, replace this URL:
+const BACKEND_URL = 'https://YOUR-BACKEND.onrender.com/contact';
+// Path to your learning log JSON in the same repo:
+const LEARNING_LOG_URL = 'learning-log.json';
 
-function typeTitle() {
-  const current = titles[titleIndex];
-
-  if (isDeleting) {
-    charIndex--;
-  } else {
-    charIndex++;
-  }
-
-  typedEl.textContent = current.substring(0, charIndex);
-
-  let delay = isDeleting ? 50 : 90;
-
-  if (!isDeleting && charIndex === current.length) {
-    delay = 2200;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    titleIndex = (titleIndex + 1) % titles.length;
-    delay = 400;
-  }
-
-  setTimeout(typeTitle, delay);
-}
-
-typeTitle();
-
-/* ── NAVBAR SCROLL ── */
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-/* ── MOBILE HAMBURGER ── */
+// ── NAVBAR HAMBURGER ── //
 const hamburger = document.getElementById('hamburger');
 const navMobile = document.getElementById('navMobile');
-
 hamburger.addEventListener('click', () => {
   navMobile.classList.toggle('open');
 });
-
 // Close mobile nav on link click
 navMobile.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navMobile.classList.remove('open');
-  });
+  link.addEventListener('click', () => navMobile.classList.remove('open'));
 });
 
-/* ── INTERSECTION OBSERVER: REVEAL ── */
-const revealEls = document.querySelectorAll('.reveal');
+// ── ACTIVE NAV LINK ON SCROLL ── //
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 120) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+}, { passive: true });
 
+// ── REVEAL ON SCROLL ── //
+const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -75,169 +45,220 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.1,
-  rootMargin: '0px 0px -40px 0px'
-});
-
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => revealObserver.observe(el));
 
-/* ── SKILL BARS ANIMATE ── */
-const skillBars = document.querySelectorAll('.skill-bar');
-
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-      barObserver.unobserve(entry.target);
+// ── STATUS BAR ── //
+async function loadStatus() {
+  try {
+    const res = await fetch(LEARNING_LOG_URL + '?v=' + Date.now());
+    const data = await res.json();
+    const statusEl = document.getElementById('statusText');
+    if (data.currentStatus) {
+      statusEl.textContent = data.currentStatus;
     }
-  });
-}, { threshold: 0.3 });
-
-skillBars.forEach(bar => barObserver.observe(bar));
-
-/* ── GITHUB CONTRIBUTION GRID ── */
-function buildContribGrid() {
-  const grid = document.getElementById('contribGrid');
-  if (!grid) return;
-
-  const totalCells = 26 * 4; // 26 cols × 4 rows (simplified)
-  const levels = ['', 'l1', 'l2', 'l3', 'l4'];
-
-  // Seeded random pattern for demo
-  const seed = [
-    0,0,1,0,2,1,0,0,3,1,0,2,1,0,0,1,2,0,0,1,0,0,3,1,0,0,
-    0,1,2,1,3,2,1,0,2,3,1,2,1,0,1,2,3,1,0,2,1,0,1,2,0,1,
-    1,2,3,2,4,3,2,1,3,4,2,3,2,1,2,3,4,2,1,3,2,1,4,3,1,2,
-    0,1,2,1,3,2,0,1,2,1,0,2,1,0,1,2,1,0,1,2,1,0,2,1,0,1,
-  ];
-
-  seed.forEach((level, i) => {
-    const cell = document.createElement('div');
-    cell.className = `contrib-cell ${levels[level]}`;
-    grid.appendChild(cell);
-  });
+  } catch (e) {
+    document.getElementById('statusText').textContent =
+      'Currently enrolled in Error Makes Clever DevOps Bootcamp';
+  }
 }
+loadStatus();
 
-buildContribGrid();
+// ── GITHUB PROJECTS ── //
+async function loadProjects() {
+  const grid = document.getElementById('projectsGrid');
+  try {
+    const res = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
+    );
+    if (!res.ok) throw new Error('GitHub API error');
+    const repos = await res.json();
 
-/* ── SMOOTH SCROLL FOR ANCHOR LINKS ── */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+    // Filter out forked repos, sort by updated
+    const filtered = repos
+      .filter(r => !r.fork)
+      .slice(0, 6);
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="projects-loading"><span>No public repos found yet.</span></div>';
+      return;
     }
-  });
-});
 
-/* ── ACTIVE NAV LINK HIGHLIGHTING ── */
-const sections = document.querySelectorAll('section[id]');
-const navLinksAll = document.querySelectorAll('.nav-links a');
+    const icons = {
+      HTML: '🌐', CSS: '🎨', JavaScript: '⚡', Python: '🐍',
+      Shell: '📜', Dockerfile: '🐳', default: '📁'
+    };
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinksAll.forEach(link => {
-        link.style.color = '';
-        if (link.getAttribute('href') === `#${id}`) {
-          link.style.color = 'var(--green)';
-        }
+    grid.innerHTML = filtered.map(repo => {
+      const icon = icons[repo.language] || icons.default;
+      const updated = new Date(repo.updated_at).toLocaleDateString('en-US', {
+        month: 'short', year: 'numeric'
       });
-    }
-  });
-}, { threshold: 0.4 });
+      const desc = repo.description || 'No description yet — check the repo for details.';
+      const lang = repo.language || 'Misc';
+      return `
+        <a class="project-card reveal" href="${repo.html_url}" target="_blank" rel="noopener">
+          <div class="project-card-header">
+            <span class="project-icon">${icon}</span>
+            <span class="project-stars">★ ${repo.stargazers_count}</span>
+          </div>
+          <div class="project-name">${repo.name}</div>
+          <div class="project-desc">${desc}</div>
+          <div class="project-meta">
+            <span class="project-lang">${lang}</span>
+            <span class="project-updated">Updated ${updated}</span>
+          </div>
+        </a>
+      `;
+    }).join('');
 
-sections.forEach(s => sectionObserver.observe(s));
+    // Re-observe new elements for reveal animation
+    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* ── TERMINAL LINES STAGGER ── */
-const terminalLines = document.querySelectorAll('.terminal-body p');
-terminalLines.forEach((line, i) => {
-  line.style.animationDelay = `${i * 0.18}s`;
-  line.style.opacity = '0';
-  line.style.transform = 'translateY(6px)';
-  line.style.animation = `termFadeIn 0.4s ease forwards ${i * 0.12 + 0.5}s`;
-});
-
-const styleSheet = document.createElement('style');
-styleSheet.textContent = `
-  @keyframes termFadeIn {
-    to { opacity: 1; transform: translateY(0); }
+  } catch (err) {
+    grid.innerHTML = `
+      <div class="projects-loading">
+        <span>Could not load repos right now. <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" style="color:var(--accent)">View on GitHub →</a></span>
+      </div>`;
   }
-`;
-document.head.appendChild(styleSheet);
-
-/* ── CARD TILT EFFECT (subtle) ── */
-function addTilt(selector) {
-  document.querySelectorAll(selector).forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const dx = (x - cx) / cx;
-      const dy = (y - cy) / cy;
-      card.style.transform = `perspective(600px) rotateY(${dx * 3}deg) rotateX(${-dy * 3}deg) translateY(-4px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
 }
+loadProjects();
 
-addTilt('.project-card');
-addTilt('.skill-card');
+// ── LEARNING LOG ── //
+async function loadLearningLog() {
+  const grid = document.getElementById('learningGrid');
+  try {
+    const res = await fetch(LEARNING_LOG_URL + '?v=' + Date.now());
+    if (!res.ok) throw new Error('Not found');
+    const data = await res.json();
 
-/* ── HERO GLOW FOLLOW MOUSE ── */
-const heroGlow1 = document.querySelector('.hero-glow-1');
-const heroGlow2 = document.querySelector('.hero-glow-2');
+    if (!data.entries || data.entries.length === 0) {
+      grid.innerHTML = '<div class="projects-loading"><span>Learning log coming soon.</span></div>';
+      return;
+    }
 
-document.addEventListener('mousemove', (e) => {
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
-  if (heroGlow1) {
-    heroGlow1.style.transform = `translate(${x * 40 - 20}px, ${y * 40 - 20}px)`;
+    grid.innerHTML = data.entries.map(entry => {
+      const statusClass = entry.status === 'done' ? 'done' :
+                          entry.status === 'in-progress' ? 'in-progress' : 'upcoming';
+      const statusLabel = entry.status === 'done' ? '✓ Done' :
+                          entry.status === 'in-progress' ? '⟳ In Progress' : '○ Up Next';
+      const tags = (entry.tags || []).map(t =>
+        `<span class="learning-tag">${t}</span>`
+      ).join('');
+      return `
+        <div class="learning-card reveal">
+          <div class="learning-card-top">
+            <span class="learning-week">${entry.week}</span>
+            <span class="learning-status ${statusClass}">${statusLabel}</span>
+          </div>
+          <h4>${entry.title}</h4>
+          <p>${entry.description}</p>
+          <div class="learning-tags">${tags}</div>
+        </div>
+      `;
+    }).join('');
+
+    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  } catch (err) {
+    // Fallback placeholder entries while learning-log.json doesn't exist yet
+    const placeholders = [
+      {
+        week: 'Week 1', title: 'Linux & Git Foundations',
+        description: 'Covered Linux CLI basics, file permissions, process management, and full Git workflow from init to push.',
+        tags: ['Linux', 'Git', 'CLI'], status: 'done'
+      },
+      {
+        week: 'Week 2', title: 'GitHub & Static Deployment',
+        description: 'Built and deployed static sites using GitHub Pages. Practiced branching strategies and pull requests.',
+        tags: ['GitHub', 'GitHub Pages', 'Branching'], status: 'done'
+      },
+      {
+        week: 'Week 3', title: 'Docker & Containerization',
+        description: 'Currently learning Docker fundamentals — images, containers, Dockerfiles, and docker-compose.',
+        tags: ['Docker', 'Containers'], status: 'in-progress'
+      },
+      {
+        week: 'Week 4', title: 'CI/CD with GitHub Actions',
+        description: 'Will cover writing workflows, automated testing, and deployment pipelines.',
+        tags: ['GitHub Actions', 'CI/CD'], status: 'upcoming'
+      }
+    ];
+
+    grid.innerHTML = placeholders.map(entry => {
+      const statusClass = entry.status === 'done' ? 'done' :
+                          entry.status === 'in-progress' ? 'in-progress' : 'upcoming';
+      const statusLabel = entry.status === 'done' ? '✓ Done' :
+                          entry.status === 'in-progress' ? '⟳ In Progress' : '○ Up Next';
+      const tags = entry.tags.map(t => `<span class="learning-tag">${t}</span>`).join('');
+      return `
+        <div class="learning-card reveal">
+          <div class="learning-card-top">
+            <span class="learning-week">${entry.week}</span>
+            <span class="learning-status ${statusClass}">${statusLabel}</span>
+          </div>
+          <h4>${entry.title}</h4>
+          <p>${entry.description}</p>
+          <div class="learning-tags">${tags}</div>
+        </div>
+      `;
+    }).join('');
+
+    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   }
-  if (heroGlow2) {
-    heroGlow2.style.transform = `translate(${-x * 30 + 15}px, ${-y * 30 + 15}px)`;
-  }
-}, { passive: true });
+}
+loadLearningLog();
 
-/* ── COUNTER ANIMATION FOR STATS ── */
-function animateCounter(el, target) {
-  let start = 0;
-  const duration = 1400;
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(eased * target) + (el.dataset.suffix || '+');
-    if (progress < 1) requestAnimationFrame(step);
+// ── CONTACT FORM ── //
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    subject: form.subject.value.trim(),
+    message: form.message.value.trim()
   };
-  requestAnimationFrame(step);
-}
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const nums = entry.target.querySelectorAll('.stat-num');
-      nums.forEach(num => {
-        const match = num.textContent.match(/(\d+)/);
-        if (match) {
-          const val = parseInt(match[1]);
-          num.dataset.suffix = num.textContent.includes('+') ? '+' : '';
-          animateCounter(num, val);
-        }
-      });
-      statsObserver.unobserve(entry.target);
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  formStatus.className = 'form-status';
+  formStatus.textContent = '';
+
+  // If backend not set up yet, show a friendly message
+  if (BACKEND_URL.includes('YOUR-BACKEND')) {
+    setTimeout(() => {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = 'Backend not connected yet. Please email directly: abhisheik912@gmail.com';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }, 600);
+    return;
+  }
+
+  try {
+    const res = await fetch(BACKEND_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      formStatus.className = 'form-status success';
+      formStatus.textContent = '✓ Message sent! I\'ll get back to you soon.';
+      form.reset();
+    } else {
+      throw new Error('Server error');
     }
-  });
-}, { threshold: 0.5 });
+  } catch (err) {
+    formStatus.className = 'form-status error';
+    formStatus.textContent = 'Something went wrong. Please email: abhisheik912@gmail.com';
+  }
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObserver.observe(heroStats);
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Send Message';
+});
