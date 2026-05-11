@@ -3,7 +3,7 @@
 // ── CONFIG ── //
 const GITHUB_USERNAME = 'Abhisheik912';
 // Once your backend is live on Render, replace this URL:
-const BACKEND_URL = 'https://YOUR-BACKEND.onrender.com/contact';
+const BACKEND_URL = 'https://abhisheik-nandan-portfolio-backend.onrender.com/contact';
 // Path to your learning log JSON - uses current base path automatically:
 const LEARNING_LOG_URL = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/learning-log.json';
 
