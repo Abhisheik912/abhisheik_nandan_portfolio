@@ -1,39 +1,88 @@
 {
-  "currentStatus": "Week 3 of DevOps Bootcamp — currently learning Docker & Containerization",
+  "currentStatus": "Week 7 of DevOps Bootcamp — completed AWS CloudFormation, next up: Docker & Containerization",
   "entries": [
     {
       "week": "Week 1",
-      "title": "Linux & Git Foundations",
-      "description": "Covered Linux CLI basics, file permissions, process management, and full Git workflow from init to push. Built confidence working entirely in the terminal.",
-      "tags": ["Linux", "Git", "CLI", "Terminal"],
+      "title": "Linux Foundations",
+      "description": "Completed Linux basics — file system navigation, permissions, process management, sudo, package management, and working confidently in the terminal.",
+      "tags": ["Linux", "CLI", "File Permissions", "Package Management"],
       "status": "done"
     },
     {
       "week": "Week 2",
-      "title": "GitHub & Static Deployment",
-      "description": "Built and deployed static sites using GitHub Pages. Practiced branching strategies, pull requests, and resolving merge conflicts.",
-      "tags": ["GitHub", "GitHub Pages", "Branching", "PR"],
+      "title": "Git & GitHub",
+      "description": "Covered full Git workflow — version control, branching, merging, conflict resolution, collaborating on GitHub, pull requests, and deploying live projects with GitHub Pages.",
+      "tags": ["Git", "GitHub", "Branching", "Merging", "GitHub Pages"],
       "status": "done"
     },
     {
       "week": "Week 3",
-      "title": "Docker & Containerization",
-      "description": "Currently learning Docker fundamentals — images, containers, Dockerfiles, volumes, and docker-compose for multi-container setups.",
-      "tags": ["Docker", "Containers", "Dockerfile"],
-      "status": "in-progress"
+      "title": "Servers, APIs & Application Architecture",
+      "description": "Deep dive into servers, REST APIs, monolithic vs microservices architecture, multi-tier web application architecture, proxy servers, load balancing, and reverse proxies.",
+      "tags": ["Servers", "REST APIs", "Microservices", "Load Balancing", "Architecture"],
+      "status": "done"
     },
     {
       "week": "Week 4",
-      "title": "CI/CD with GitHub Actions",
-      "description": "Will cover writing workflow YAML files, automated testing pipelines, and auto-deployment on push.",
-      "tags": ["GitHub Actions", "CI/CD", "YAML"],
-      "status": "upcoming"
+      "title": "Cloud Computing & AWS Fundamentals",
+      "description": "Learned IaaS, PaaS, SaaS, cloud deployment models, and AWS fundamentals. Set up AWS account, explored the management console, and practiced free tier best practices.",
+      "tags": ["Cloud Computing", "AWS", "IaaS", "PaaS", "SaaS"],
+      "status": "done"
     },
     {
       "week": "Week 5",
-      "title": "AWS Cloud Fundamentals",
-      "description": "EC2 instances, S3 storage, IAM roles, VPC networking, and deploying a real application to the cloud.",
-      "tags": ["AWS", "EC2", "S3", "IAM"],
+      "title": "AWS IAM & EC2",
+      "description": "Covered IAM users, groups, policies, and roles with hands-on configuration. Set up EC2 instances, connected via SSH, configured security groups, and assigned IAM roles to instances.",
+      "tags": ["AWS", "IAM", "EC2", "SSH", "Security Groups"],
+      "status": "done"
+    },
+    {
+      "week": "Week 6",
+      "title": "AWS Storage, Load Balancing & VPC",
+      "description": "Learned S3 storage, bucket policies, static site hosting, ELB/ALB load balancers, auto scaling groups, VPC setup, subnets, route tables, gateways, and VPC peering.",
+      "tags": ["AWS", "S3", "Load Balancer", "Auto Scaling", "VPC"],
+      "status": "done"
+    },
+    {
+      "week": "Week 7",
+      "title": "AWS Lambda, SQS, SNS, CloudWatch & CloudFormation",
+      "description": "Covered serverless computing with Lambda, SQS and SNS integrations, CloudWatch monitoring and alarms, CloudTrail logging, and Infrastructure as Code with CloudFormation templates.",
+      "tags": ["AWS Lambda", "SQS", "SNS", "CloudWatch", "CloudFormation", "IaC"],
+      "status": "done"
+    },
+    {
+      "week": "Week 8",
+      "title": "Docker & Containerization",
+      "description": "Upcoming — Docker architecture, Dockerfiles, images, containers, volumes, networks, Docker Compose, and multi-stage builds.",
+      "tags": ["Docker", "Containers", "Dockerfile", "Docker Compose"],
+      "status": "upcoming"
+    },
+    {
+      "week": "Week 9",
+      "title": "CI/CD with Jenkins",
+      "description": "Upcoming — Jenkins setup, freestyle and pipeline jobs, GitHub integration, webhooks, SonarQube testing, Docker-Jenkins integration, and full CI/CD pipelines.",
+      "tags": ["Jenkins", "CI/CD", "Webhooks", "SonarQube", "Pipelines"],
+      "status": "upcoming"
+    },
+    {
+      "week": "Week 10",
+      "title": "Shell Scripting & Cron Jobs",
+      "description": "Upcoming — shell scripting fundamentals, variables, conditionals, loops, functions, error handling, practical DevOps automation scripts, and scheduling with cron jobs.",
+      "tags": ["Shell Scripting", "Bash", "Cron Jobs", "Automation"],
+      "status": "upcoming"
+    },
+    {
+      "week": "Week 11",
+      "title": "Monitoring with Prometheus & Grafana",
+      "description": "Upcoming — setting up Prometheus and Node Exporter on EC2, integrating with Grafana, creating dashboards, and configuring alerts.",
+      "tags": ["Prometheus", "Grafana", "Monitoring", "Observability"],
+      "status": "upcoming"
+    },
+    {
+      "week": "Week 12",
+      "title": "Kubernetes",
+      "description": "Upcoming — Kubernetes architecture, pods, deployments, services, ReplicaSets, YAML configs, networking, microservices on K8s, and managed K8s on AWS EKS, GCP GKE, and Azure AKS.",
+      "tags": ["Kubernetes", "K8s", "EKS", "GKE", "AKS", "Pods"],
       "status": "upcoming"
     }
   ]
