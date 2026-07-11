@@ -8,6 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .cert-card{background:#fff;border:1px solid #dde3ec;border-radius:16px;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .cert-card:hover{transform:translateY(-2px);box-shadow:0 4px 24px rgba(0,0,0,.08);border-color:#2563eb}
+    .cert-issuer-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;letter-spacing:.03em;flex-shrink:0}
+    .cert-issuer-badge.aws{background:#fff3e0;color:#e65100}
+    .cert-issuer-badge.iit{background:#e8f5e9;color:#2e7d32}
+    .cert-issuer-badge.ibm{background:#e3f2fd;color:#1565c0}
+    .cert-issuer-badge.isc{background:#f3e5f5;color:#6a1b9a}
+    .cert-issuer-badge.google{background:#fce4ec;color:#c62828}
+    .cert-issuer-badge.om{background:#e0f7fa;color:#00695c}
+    .cert-info{flex:1;min-width:0}
+    .cert-name{font-size:13.5px;font-weight:600;color:#1e293b;line-height:1.4;margin-bottom:3px}
+    .cert-issuer{font-size:12px;color:#94a3b8;font-weight:500}
+    .cert-date{font-size:11.5px;color:#94a3b8;margin-top:2px}
+    .cert-arrow{font-size:16px;color:#94a3b8;flex-shrink:0;transition:color .2s}
+    .cert-card:hover .cert-arrow{color:#2563eb}
+  </style>
 </head>
 <body>
 
@@ -60,7 +78,7 @@
           Abhisheik<br /><em>Nandan N</em>
         </h1>
         <p class="hero-tagline reveal">
-          Infrastructure-minded engineer with hands-on experience in Linux hosting, DNS architecture, and server operations at Namecheap — now building the automation layer on top.
+          Infrastructure-minded engineer with hands-on experience in Linux hosting, DNS, and server operations at Namecheap — now equipped with Docker, Jenkins CI/CD, AWS, and Kubernetes from the Error Makes Clever DevOps Bootcamp.
         </p>
         <div class="hero-btns reveal">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -119,12 +137,12 @@
           <div class="about-card">
             <div class="card-icon">🔁</div>
             <h4>Automation Focused</h4>
-            <p>Learning CI/CD, Docker, and cloud platforms to automate everything that can be automated.</p>
+            <p>Built CI/CD pipelines with Jenkins, containerised apps with Docker, and automated infrastructure on AWS — now completing Kubernetes.</p>
           </div>
           <div class="about-card">
             <div class="card-icon">📈</div>
             <h4>Actively Certifying</h4>
-            <p>Currently completing the Error Makes Clever DevOps Bootcamp — ISO certification on the way.</p>
+            <p>Completing the Error Makes Clever DevOps Bootcamp — 14 weeks covering Linux, AWS, Docker, Jenkins, Shell Scripting, Monitoring, and Kubernetes. ISO certification incoming.</p>
           </div>
         </div>
       </div>
@@ -153,21 +171,22 @@
           <div class="skill-group-title">DevOps & Automation</div>
           <div class="skill-items">
             <div class="skill-item active">Git & GitHub</div>
-            <div class="skill-item active">GitHub Actions</div>
-            <div class="skill-item learning">Docker</div>
-            <div class="skill-item learning">CI/CD Pipelines</div>
-            <div class="skill-item learning">Bash Scripting</div>
+            <div class="skill-item active">Docker & Docker Compose</div>
+            <div class="skill-item active">Jenkins CI/CD</div>
+            <div class="skill-item active">Bash Scripting</div>
+            <div class="skill-item active">SonarQube</div>
+            <div class="skill-item active">Maven</div>
           </div>
         </div>
 
         <div class="skill-group">
           <div class="skill-group-title">Cloud & Infrastructure</div>
           <div class="skill-items">
-            <div class="skill-item learning">AWS EC2</div>
-            <div class="skill-item learning">Cloud Fundamentals</div>
-            <div class="skill-item upcoming">Kubernetes</div>
+            <div class="skill-item active">AWS (EC2, S3, IAM, VPC, Lambda)</div>
+            <div class="skill-item active">CloudWatch & CloudFormation</div>
+            <div class="skill-item active">Prometheus & Grafana</div>
+            <div class="skill-item learning">Kubernetes (K8s)</div>
             <div class="skill-item upcoming">Terraform</div>
-            <div class="skill-item upcoming">Monitoring & Observability</div>
           </div>
         </div>
 

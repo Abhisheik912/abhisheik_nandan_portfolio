@@ -1,5 +1,5 @@
 {
-  "currentStatus": "Week 7 of DevOps Bootcamp — completed AWS CloudFormation, next up: Docker & Containerization",
+  "currentStatus": "Final Week of DevOps Bootcamp — completing Kubernetes on AWS EKS, GCP GKE & Azure AKS 🎓",
   "entries": [
     {
       "week": "Week 1",
@@ -32,7 +32,7 @@
     {
       "week": "Week 5",
       "title": "AWS IAM & EC2",
-      "description": "Covered IAM users, groups, policies, and roles with hands-on configuration. Set up EC2 instances, connected via SSH, configured security groups, and assigned IAM roles to instances.",
+      "description": "Covered IAM users, groups, policies, and roles with hands-on configuration. Set up EC2 instances, connected via SSH, configured security groups, and assigned IAM roles.",
       "tags": ["AWS", "IAM", "EC2", "SSH", "Security Groups"],
       "status": "done"
     },
@@ -53,37 +53,51 @@
     {
       "week": "Week 8",
       "title": "Docker & Containerization",
-      "description": "Upcoming — Docker architecture, Dockerfiles, images, containers, volumes, networks, Docker Compose, and multi-stage builds.",
+      "description": "Learned Docker architecture, writing Dockerfiles, building images, running containers, volumes, networks, Docker Compose for multi-container apps, and multi-stage builds.",
       "tags": ["Docker", "Containers", "Dockerfile", "Docker Compose"],
-      "status": "upcoming"
+      "status": "done"
     },
     {
       "week": "Week 9",
       "title": "CI/CD with Jenkins",
-      "description": "Upcoming — Jenkins setup, freestyle and pipeline jobs, GitHub integration, webhooks, SonarQube testing, Docker-Jenkins integration, and full CI/CD pipelines.",
-      "tags": ["Jenkins", "CI/CD", "Webhooks", "SonarQube", "Pipelines"],
-      "status": "upcoming"
+      "description": "Built full CI/CD pipelines with Jenkins — freestyle and declarative pipeline jobs, GitHub webhook integration, SonarQube for code quality, Docker-Jenkins integration, and Blue Ocean.",
+      "tags": ["Jenkins", "CI/CD", "Webhooks", "SonarQube", "Docker"],
+      "status": "done"
     },
     {
       "week": "Week 10",
-      "title": "Shell Scripting & Cron Jobs",
-      "description": "Upcoming — shell scripting fundamentals, variables, conditionals, loops, functions, error handling, practical DevOps automation scripts, and scheduling with cron jobs.",
-      "tags": ["Shell Scripting", "Bash", "Cron Jobs", "Automation"],
-      "status": "upcoming"
+      "title": "Maven & Advanced Jenkins",
+      "description": "Covered Maven build lifecycle and Jenkins integration, Jenkins master-slave configuration on AWS EC2, role-based access control, and backup and restore strategies.",
+      "tags": ["Maven", "Jenkins", "Master-Slave", "AWS EC2", "RBAC"],
+      "status": "done"
     },
     {
       "week": "Week 11",
-      "title": "Monitoring with Prometheus & Grafana",
-      "description": "Upcoming — setting up Prometheus and Node Exporter on EC2, integrating with Grafana, creating dashboards, and configuring alerts.",
-      "tags": ["Prometheus", "Grafana", "Monitoring", "Observability"],
-      "status": "upcoming"
+      "title": "Shell Scripting & Cron Jobs",
+      "description": "Built practical shell scripts — variables, conditionals, loops, functions, error handling, DevOps automation use cases like log monitoring, disk usage alerts, and backup scripts with cron scheduling.",
+      "tags": ["Shell Scripting", "Bash", "Cron Jobs", "Automation"],
+      "status": "done"
     },
     {
       "week": "Week 12",
-      "title": "Kubernetes",
-      "description": "Upcoming — Kubernetes architecture, pods, deployments, services, ReplicaSets, YAML configs, networking, microservices on K8s, and managed K8s on AWS EKS, GCP GKE, and Azure AKS.",
-      "tags": ["Kubernetes", "K8s", "EKS", "GKE", "AKS", "Pods"],
-      "status": "upcoming"
+      "title": "Monitoring with Prometheus & Grafana",
+      "description": "Set up Prometheus and Node Exporter on AWS EC2, integrated with Grafana, created monitoring dashboards, configured alerts, and followed best practices for DevOps observability.",
+      "tags": ["Prometheus", "Grafana", "Monitoring", "Observability", "AWS EC2"],
+      "status": "done"
+    },
+    {
+      "week": "Week 13",
+      "title": "Kubernetes Fundamentals",
+      "description": "Covered Kubernetes architecture, pods, ReplicaSets, deployments, services (NodePort, ClusterIP, LoadBalancer), YAML configuration, networking, and deployed a microservices voting app on K8s.",
+      "tags": ["Kubernetes", "K8s", "Pods", "Deployments", "Services", "YAML"],
+      "status": "done"
+    },
+    {
+      "week": "Week 14",
+      "title": "Kubernetes on Cloud — EKS, GKE & AKS",
+      "description": "Currently completing managed Kubernetes on cloud providers — AWS EKS, Google GKE, and Azure AKS. Final week of the Error Makes Clever DevOps Bootcamp. ISO certification incoming.",
+      "tags": ["AWS EKS", "GCP GKE", "Azure AKS", "Kubernetes", "Cloud"],
+      "status": "in-progress"
     }
   ]
 }
