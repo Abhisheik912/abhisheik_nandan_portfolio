@@ -1,5 +1,5 @@
 {
-  "currentStatus": "DevOps Bootcamp Complete — Batch 07 🎓 (ISO certification incoming)",
+  "currentStatus": "DevOps Bootcamp Complete — Batch 07 🎓 (ISO certification incoming) | Currently self-studying Terraform & Ansible, sharpening Linux/security via OverTheWire Bandit",
   "entries": [
     {
       "week": "Week 1",
@@ -145,12 +145,13 @@
     {
       "week": "Week 12",
       "title": "Monitoring with Prometheus & Grafana",
-      "description": "Set up Prometheus and Node Exporter on AWS EC2, integrated with Grafana, created monitoring dashboards, configured alerts, and followed best practices for DevOps observability.",
+      "description": "Set up Prometheus and Node Exporter on AWS EC2, integrated with Grafana, created monitoring dashboards, configured alerts, wrote PromQL queries, and followed best practices for DevOps observability.",
       "tags": [
         "Prometheus",
         "Grafana",
         "Monitoring",
         "Observability",
+        "PromQL",
         "AWS EC2"
       ],
       "status": "done"
@@ -158,7 +159,7 @@
     {
       "week": "Week 13",
       "title": "Kubernetes Fundamentals",
-      "description": "Covered Kubernetes architecture, pods, ReplicaSets, deployments, services (NodePort, ClusterIP, LoadBalancer), YAML configuration, networking, and deployed a microservices voting app on K8s.",
+      "description": "Covered Kubernetes architecture, pods, ReplicaSets, deployments, services (NodePort, ClusterIP, LoadBalancer), YAML configuration, networking, troubleshooting (CrashLoopBackOff, ImagePullBackOff, OOMKilled), and deployed a microservices voting app on K8s.",
       "tags": [
         "Kubernetes",
         "K8s",
@@ -195,6 +196,19 @@
         "Security"
       ],
       "status": "done"
+    },
+    {
+      "week": "Week 16",
+      "title": "OverTheWire Bandit — Linux & Security Wargame",
+      "description": "Working through the Bandit wargame to sharpen Linux command-line and security skills beyond the bootcamp curriculum.",
+      "tags": [
+        "Linux",
+        "Security",
+        "OverTheWire",
+        "Bandit",
+        "Self-Study"
+      ],
+      "status": "in-progress"
     }
   ]
 }

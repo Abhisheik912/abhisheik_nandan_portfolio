@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,26 +8,117 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet" />
   <style>
-    .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-    .cert-card{background:#fff;border:1px solid #dde3ec;border-radius:16px;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
-    .cert-card:hover{transform:translateY(-2px);box-shadow:0 4px 24px rgba(0,0,0,.08);border-color:#2563eb}
-    .cert-issuer-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;letter-spacing:.03em;flex-shrink:0}
-    .cert-issuer-badge.aws{background:#fff3e0;color:#e65100}
-    .cert-issuer-badge.iit{background:#e8f5e9;color:#2e7d32}
-    .cert-issuer-badge.ibm{background:#e3f2fd;color:#1565c0}
-    .cert-issuer-badge.isc{background:#f3e5f5;color:#6a1b9a}
-    .cert-issuer-badge.google{background:#fce4ec;color:#c62828}
-    .cert-issuer-badge.om{background:#e0f7fa;color:#00695c}
-    .cert-info{flex:1;min-width:0}
-    .cert-name{font-size:13.5px;font-weight:600;color:#1e293b;line-height:1.4;margin-bottom:3px}
-    .cert-issuer{font-size:12px;color:#94a3b8;font-weight:500}
-    .cert-date{font-size:11.5px;color:#94a3b8;margin-top:2px}
-    .cert-arrow{font-size:16px;color:#94a3b8;flex-shrink:0;transition:color .2s}
-    .cert-card:hover .cert-arrow{color:#2563eb}
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem
+    }
+
+    .cert-card {
+      background: #fff;
+      border: 1px solid #dde3ec;
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 4px 16px rgba(0, 0, 0, .06);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s, box-shadow .2s, border-color .2s
+    }
+
+    .cert-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+      border-color: #2563eb
+    }
+
+    .cert-issuer-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      flex-shrink: 0
+    }
+
+    .cert-issuer-badge.aws {
+      background: #fff3e0;
+      color: #e65100
+    }
+
+    .cert-issuer-badge.iit {
+      background: #e8f5e9;
+      color: #2e7d32
+    }
+
+    .cert-issuer-badge.ibm {
+      background: #e3f2fd;
+      color: #1565c0
+    }
+
+    .cert-issuer-badge.isc {
+      background: #f3e5f5;
+      color: #6a1b9a
+    }
+
+    .cert-issuer-badge.google {
+      background: #fce4ec;
+      color: #c62828
+    }
+
+    .cert-issuer-badge.om {
+      background: #e0f7fa;
+      color: #00695c
+    }
+
+    .cert-info {
+      flex: 1;
+      min-width: 0
+    }
+
+    .cert-name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.4;
+      margin-bottom: 3px
+    }
+
+    .cert-issuer {
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 500
+    }
+
+    .cert-date {
+      font-size: 11.5px;
+      color: #94a3b8;
+      margin-top: 2px
+    }
+
+    .cert-arrow {
+      font-size: 16px;
+      color: #94a3b8;
+      flex-shrink: 0;
+      transition: color .2s
+    }
+
+    .cert-card:hover .cert-arrow {
+      color: #2563eb
+    }
   </style>
 </head>
+
 <body>
 
   <!-- STATUS BAR -->
@@ -59,6 +151,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
       <a href="#learning">Learning</a>
       <a href="#contact">Contact</a>
     </div>
@@ -78,7 +171,9 @@
           Abhisheik<br /><em>Nandan N</em>
         </h1>
         <p class="hero-tagline reveal">
-          Infrastructure-minded engineer with hands-on experience in Linux hosting, DNS, and server operations at Namecheap — now equipped with Docker, Jenkins CI/CD, AWS, and Kubernetes from the Error Makes Clever DevOps Bootcamp.
+          Infrastructure-minded engineer with hands-on experience in Linux hosting, DNS, and server operations at
+          Namecheap — now equipped with Docker, Jenkins CI/CD, AWS, and Kubernetes from the Error Makes Clever DevOps
+          Bootcamp.
         </p>
         <div class="hero-btns reveal">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -96,8 +191,8 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-num">1</span>
-            <span class="stat-label">Cert in Progress</span>
+            <span class="stat-num">16</span>
+            <span class="stat-label">Weeks of DevOps Training</span>
           </div>
         </div>
       </div>
@@ -124,25 +219,32 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <h2 class="section-title">The story so<br /><em>far</em></h2>
-          <p>I'm a Senior Technical Support Specialist at <strong>Namecheap</strong> — one of the world's largest web hosting and domain registrars. Every day I troubleshoot Linux-based servers, resolve DNS failures, debug email protocols, and keep production environments running for thousands of customers.</p>
-          <p>That operational depth — knowing what breaks, why it breaks, and how to fix it fast — is exactly what makes a great DevOps engineer. Now I'm formalising that with a structured DevOps certification and building real projects that demonstrate the full pipeline: code, containerise, automate, deploy, monitor.</p>
+          <p>I'm a Senior Technical Support Specialist at <strong>Namecheap</strong> — one of the world's largest web
+            hosting and domain registrars. Every day I troubleshoot Linux-based servers, resolve DNS failures, debug
+            email protocols, and keep production environments running for thousands of customers.</p>
+          <p>That operational depth — knowing what breaks, why it breaks, and how to fix it fast — is exactly what makes
+            a great DevOps engineer. Now I'm formalising that with a structured DevOps certification and building real
+            projects that demonstrate the full pipeline: code, containerise, automate, deploy, monitor.</p>
           <p>I'm not starting from scratch. I'm building upward.</p>
         </div>
         <div class="about-cards reveal">
           <div class="about-card">
             <div class="card-icon">⚡</div>
             <h4>Infrastructure Background</h4>
-            <p>Almost 1 year supporting Linux hosting, DNS, VPS, and dedicated servers in a live production environment.</p>
+            <p>Almost 1 year supporting Linux hosting, DNS, VPS, and dedicated servers in a live production environment.
+            </p>
           </div>
           <div class="about-card">
             <div class="card-icon">🔁</div>
             <h4>Automation Focused</h4>
-            <p>Built CI/CD pipelines with Jenkins, containerised apps with Docker, and automated infrastructure on AWS — now completing Kubernetes.</p>
+            <p>Built CI/CD pipelines with Jenkins, containerised apps with Docker, and automated infrastructure on AWS —
+              now completing Kubernetes.</p>
           </div>
           <div class="about-card">
             <div class="card-icon">📈</div>
-            <h4>Actively Certifying</h4>
-            <p>Completing the Error Makes Clever DevOps Bootcamp — 14 weeks covering Linux, AWS, Docker, Jenkins, Shell Scripting, Monitoring, and Kubernetes. ISO certification incoming.</p>
+            <h4>Certified</h4>
+            <p>Completed the Error Makes Clever DevOps Bootcamp — 15 weeks covering Linux, AWS, Docker, Jenkins, Shell
+              Scripting, Monitoring, Kubernetes, and DevSecOps. ISO certification incoming.</p>
           </div>
         </div>
       </div>
@@ -185,7 +287,7 @@
             <div class="skill-item active">AWS (EC2, S3, IAM, VPC, Lambda)</div>
             <div class="skill-item active">CloudWatch & CloudFormation</div>
             <div class="skill-item active">Prometheus & Grafana</div>
-            <div class="skill-item learning">Kubernetes (K8s)</div>
+            <div class="skill-item active">Kubernetes (K8s)</div>
             <div class="skill-item upcoming">Terraform</div>
           </div>
         </div>
@@ -195,8 +297,8 @@
           <div class="skill-items">
             <div class="skill-item active">Python</div>
             <div class="skill-item active">HTML / CSS / JS</div>
-            <div class="skill-item learning">Bash</div>
-            <div class="skill-item learning">YAML</div>
+            <div class="skill-item active">Bash</div>
+            <div class="skill-item active">YAML</div>
           </div>
         </div>
 
@@ -296,55 +398,99 @@
 
         <a class="cert-card" href="https://www.credly.com/go/w2v5a4VV" target="_blank" rel="noopener">
           <div class="cert-issuer-badge aws">AWS</div>
-          <div class="cert-info"><div class="cert-name">AWS Academy Cloud Foundations</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">Jul 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">AWS Academy Cloud Foundations</div>
+            <div class="cert-issuer">Amazon Web Services</div>
+            <div class="cert-date">Jul 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://drive.google.com/file/d/1Yt8zHX7VLShe8mIwbYNU_hOx_FKxc0_K/view" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://drive.google.com/file/d/1Yt8zHX7VLShe8mIwbYNU_hOx_FKxc0_K/view"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge iit">IIT</div>
-          <div class="cert-info"><div class="cert-name">Git Training</div><div class="cert-issuer">IIT Bombay</div><div class="cert-date">May 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Git Training</div>
+            <div class="cert-issuer">IIT Bombay</div>
+            <div class="cert-date">May 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://drive.google.com/file/d/1lKSRS-CTSQaykOSE6CkcmpPPiZjpUuwC/view" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://drive.google.com/file/d/1lKSRS-CTSQaykOSE6CkcmpPPiZjpUuwC/view"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge iit">IIT</div>
-          <div class="cert-info"><div class="cert-name">Python 3.4.3 Training</div><div class="cert-issuer">IIT Bombay</div><div class="cert-date">Feb 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Python 3.4.3 Training</div>
+            <div class="cert-issuer">IIT Bombay</div>
+            <div class="cert-date">Feb 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/Q8LLUSXA2LWR" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/Q8LLUSXA2LWR"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge ibm">IBM</div>
-          <div class="cert-info"><div class="cert-name">Introduction to Networking &amp; Storage</div><div class="cert-issuer">IBM</div><div class="cert-date">Aug 2022</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Introduction to Networking &amp; Storage</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-date">Aug 2022</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/UL2JEWZEUSVF" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/UL2JEWZEUSVF"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge isc">ISC&sup2;</div>
-          <div class="cert-info"><div class="cert-name">Network Security</div><div class="cert-issuer">ISC2</div><div class="cert-date">May 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Network Security</div>
+            <div class="cert-issuer">ISC2</div>
+            <div class="cert-date">May 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/HDWURN4GBHDQ" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/HDWURN4GBHDQ"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge google">G</div>
-          <div class="cert-info"><div class="cert-name">Agile Project Management</div><div class="cert-issuer">Google</div><div class="cert-date">Jun 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Agile Project Management</div>
+            <div class="cert-issuer">Google</div>
+            <div class="cert-date">Jun 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/64B38LN9VSAF" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/64B38LN9VSAF"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge ibm">IBM</div>
-          <div class="cert-info"><div class="cert-name">Introduction to NoSQL Databases</div><div class="cert-issuer">IBM</div><div class="cert-date">Nov 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Introduction to NoSQL Databases</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-date">Nov 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://drive.google.com/file/d/1XC9heuP8_ZpvpnEW3KxmkIX1TWwzzABh/view" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://drive.google.com/file/d/1XC9heuP8_ZpvpnEW3KxmkIX1TWwzzABh/view"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge om">OM</div>
-          <div class="cert-info"><div class="cert-name">PowerBI Workshop</div><div class="cert-issuer">Office Master</div><div class="cert-date">Mar 2025</div></div>
+          <div class="cert-info">
+            <div class="cert-name">PowerBI Workshop</div>
+            <div class="cert-issuer">Office Master</div>
+            <div class="cert-date">Mar 2025</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
-        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/ZN6LBJ8NDFPS" target="_blank" rel="noopener">
+        <a class="cert-card" href="https://www.coursera.org/account/accomplishments/records/ZN6LBJ8NDFPS"
+          target="_blank" rel="noopener">
           <div class="cert-issuer-badge ibm">IBM</div>
-          <div class="cert-info"><div class="cert-name">Intro to Web Development — HTML, CSS, JS</div><div class="cert-issuer">IBM</div><div class="cert-date">Apr 2023</div></div>
+          <div class="cert-info">
+            <div class="cert-name">Intro to Web Development — HTML, CSS, JS</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-date">Apr 2023</div>
+          </div>
           <div class="cert-arrow">↗</div>
         </a>
 
@@ -358,7 +504,8 @@
       <div class="section-label reveal"><span class="label-num">06</span>Learning Log</div>
       <div class="learning-header reveal">
         <h2 class="section-title">The journey,<br /><em>documented</em></h2>
-        <p class="learning-subtext">Updated weekly as I progress through the DevOps bootcamp. Every entry is a real commit.</p>
+        <p class="learning-subtext">Updated weekly as I progress through the DevOps bootcamp. Every entry is a real
+          commit.</p>
       </div>
       <div class="learning-grid" id="learningGrid">
         <div class="projects-loading">
@@ -376,7 +523,8 @@
       <div class="contact-grid">
         <div class="contact-left reveal">
           <h2 class="section-title">Let's<br /><em>talk</em></h2>
-          <p>Open to DevOps Engineer roles and infrastructure opportunities. If you're hiring or just want to connect, I'd love to hear from you.</p>
+          <p>Open to DevOps Engineer roles and infrastructure opportunities. If you're hiring or just want to connect,
+            I'd love to hear from you.</p>
           <div class="contact-links">
             <a href="mailto:abhisheik912@gmail.com" class="contact-link">
               <span class="contact-link-icon">✉</span>
@@ -388,7 +536,10 @@
             </a>
             <a href="https://github.com/Abhisheik912" target="_blank" class="contact-link">
               <span class="contact-link-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
               </span>
               github.com/Abhisheik912
             </a>
@@ -410,7 +561,8 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..."
+                required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
               Send Message
@@ -426,11 +578,12 @@
   <footer>
     <div class="footer-inner">
       <span class="footer-logo">Abhisheik<span class="accent">.</span></span>
-      <span class="footer-copy">© 2025 Abhisheik Nandan N</span>
+      <span class="footer-copy">© 2026 Abhisheik Nandan N</span>
       <span class="footer-built">Built & deployed with Git + GitHub Actions</span>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
